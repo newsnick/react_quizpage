@@ -1,0 +1,22 @@
+.container {
+  margin-left: 250px;
+  width: 1400px;
+}
+
+.title {
+  margin: 25px 0 25px 320px;
+  font-weight: 700;
+}
+
+.radioButton {
+  margin: 15% 0 15% 0;
+  cursor: pointer;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.buttons {
+  margin: 25px 600px 0 0;
+}
