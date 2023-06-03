@@ -10,17 +10,17 @@ const ProductQuiz = () => {
     {
       question: 'What is the maximum resolution of the product?',
       options: ['HD', 'Full HD', '4K', '8K'],
-      correctAnswer: 2, // Index of the correct option
+      correctAnswer: 2,
     },
     {
       question: 'Which operating system does the product support?',
       options: ['Windows', 'Mac OS', 'Linux', 'All of the above'],
-      correctAnswer: 3, // Index of the correct option
+      correctAnswer: 3,
     },
     {
       question: 'What is the storage capacity of the product?',
       options: ['128GB', '256GB', '512GB', '1TB'],
-      correctAnswer: 3, // Index of the correct option
+      correctAnswer: 3,
     },
     {
       question: 'What is the battery life of the product?',
@@ -30,9 +30,8 @@ const ProductQuiz = () => {
         'Up to 12 hours',
         'Up to 24 hours',
       ],
-      correctAnswer: 2, // Index of the correct option
+      correctAnswer: 2,
     },
-    // Add more questions here
   ]
 
   const handleAnswerChange = (questionIndex, selectedOption) => {
@@ -85,7 +84,7 @@ const ProductQuiz = () => {
         <h3 className={styles.title}>Product Quiz</h3>
         {questions.map((question, index) => (
           <div className="col-md-7 text-center border" key={index}>
-            <h3 className="form-label">{question.question}</h3>
+            <h3 className="form-label m-2">{question.question}</h3>
             {question.options.map((option, optionIndex) => (
               <label className="col-md-2" key={optionIndex}>
                 <input
