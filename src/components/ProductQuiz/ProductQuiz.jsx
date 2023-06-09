@@ -56,7 +56,7 @@ const ProductQuiz = () => {
     questions.forEach((question, index) => {
       if (answers[index] === question.correctAnswer - 1) {
         newScore++
-      } // issue fixed: expected the correctAnswer values to be 0-based indices (0, 1, 2, etc.) instead of 1-based indices. Added subtract 1 from the correctAnswer values when calculating the score.
+      } // fixed: expected the correctAnswer values to be 0-based indices (0, 1, 2, etc.) instead of 1-based indices. Added subtract 1 from the correctAnswer values when calculating the score.
     })
     return newScore
   }
