@@ -41,17 +41,28 @@ const ProductQuiz = () => {
     }))
   }
 
+  // const calculateScore = () => {
+  //   let newScore = 0
+  //   questions.forEach((question, index) => {
+  //     if (answers[index] === question.correctAnswer) {
+  //       newScore++
+  //     }
+  //   })
+  //   return newScore
+  // }
+
   const calculateScore = () => {
     let newScore = 0
     questions.forEach((question, index) => {
-      if (answers[index] === question.correctAnswer) {
+      if (answers[index] === question.correctAnswer - 1) {
         newScore++
-      }
+      } // issue fixed: expected the correctAnswer values to be 0-based indices (0, 1, 2, etc.) instead of 1-based indices. Added subtract 1 from the correctAnswer values when calculating the score.
     })
     return newScore
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     if (Object.keys(answers).length === questions.length) {
       const newScore = calculateScore()
       setScore(newScore)
@@ -109,6 +120,7 @@ const ProductQuiz = () => {
               <>
                 <h1>Your score is: {score}</h1>
                 {score >= 3 ? passMessage : failMessage}
+                {/*  {score === questions.length ? passMessage : failMessage} */}
               </>
             )}
           </div>
